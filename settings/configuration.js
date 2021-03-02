@@ -1,6 +1,6 @@
 module.exports = {
     BOT_SETTINGS: {
-        BOT_TOKEN: 'ODE1MzUxODEyNTQ5NzcxMzA0.YDrJjA.sKJiMdqi-S_b_xHyrmV74gkwPwY',
+        BOT_TOKEN: '',
         YT_API_KEY: 'YT_API_KEY',
         COPYRIGHT: '© Grove RP',
         COMMAND_PREFIX: '.',
