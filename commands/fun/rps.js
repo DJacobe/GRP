@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require('discord.js');
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'rps',
@@ -9,39 +10,39 @@ module.exports = {
     execute: async(Client, message, args) => {
         let embed1 = new MessageEmbed()
             .setDescription(`Please include your choice, you can pick from rock,paper or scissors.`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed2 = new MessageEmbed()
             .setDescription(`I won, I had paper.`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed3 = new MessageEmbed()
             .setDescription(`I won, I had scissors.`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed4 = new MessageEmbed()
             .setDescription(`I won I had rock.`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed5 = new MessageEmbed()
             .setDescription(`You won, I had scissors.`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed6 = new MessageEmbed()
             .setDescription(`You won, I had rock.`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed7 = new MessageEmbed()
             .setDescription(`You won, I had paper.`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed8 = new MessageEmbed()
             .setDescription(`Please include either: Rock, Paper, or Scissors.`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed9 = new MessageEmbed()
             .setDescription(`It was a tie, we both had ${args[0]}`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
 
         if (!args[0]) {

@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const logs = require("../../settings/configuration").LOGGING.Lock_Channel_Logs;
+const copyright = require('../../settings/configuration').COPYRIGHT
 
 module.exports = {
     config: {
@@ -11,7 +12,7 @@ module.exports = {
         let log = message.guild.channels.cache.get(logs)
         let embed = new MessageEmbed({ color: Client.color })
             .setDescription(`You can\`t use that!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         let channel = message.mentions.channels.first() || message.channel
         let perms = channel.permissionOverwrites.get(message.guild.id)

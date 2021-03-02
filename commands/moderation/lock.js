@@ -3,7 +3,7 @@ const logs = require("../../settings/configuration").LOGGING.Lock_Channel_Logs;
 const parse = require('parse-duration')
 const ms = require('ms')
 const prefix = require('../../settings/configuration').BOT_SETTINGS.COMMAND_PREFIX
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'lock',
@@ -16,7 +16,7 @@ module.exports = {
         let perms = channel.permissionOverwrites.get(message.guild.id)
         let embed = new MessageEmbed({ color: Client.color })
             .setDescription(`You can\`t use that!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send(embed.setDescription('You are missing the permission `Manage Channels`'))
 

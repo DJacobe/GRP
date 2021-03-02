@@ -13,13 +13,13 @@ module.exports = {
 
         const empty = new MessageEmbed()
             .setDescription(`Can\'t seem to find any songs in this guilds queue!`)
-            .setFooter(`ERROR! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color)
         if (!serverQueue) return message.channel.send(empty);
 
         const clear = new MessageEmbed()
             .setDescription(`I have cleared this guilds queue!`)
-            .setFooter(`That song was TRASH! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color)
         message.channel.send(clear);
 

@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const randomPuppy = require('random-puppy');
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'meme',
@@ -17,7 +17,7 @@ module.exports = {
             .setTitle(`Generated Meme!`)
             .setURL(`http://reddit.com/${random}`)
             .setImage(img)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color)
 
         message.channel.send(embed);

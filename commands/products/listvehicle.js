@@ -1,5 +1,5 @@
 const { MessageEmbed } = require(`discord.js`)
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'listvehicle',
@@ -9,23 +9,23 @@ module.exports = {
     execute: async(client, message, args, base, year, date) => {
         let embed3 = new MessageEmbed()
             .setDescription(`What is the name of the vehicle you are wishing to list?`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(client.color);
         let embed4 = new MessageEmbed()
             .setDescription(`Please type some information on the vehicle.`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(client.color);
         let embed5 = new MessageEmbed()
             .setDescription(`Whats is the price going to be?`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(client.color);
         let embed6 = new MessageEmbed()
             .setDescription(`Please provide an image link for the embed if you have one!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(client.color);
         let embed7 = new MessageEmbed()
             .setDescription(`Please provide the extras or parts on this vehicle!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(client.color);
         await message.delete();
         if (!message.member.hasPermission(`ADMINISTRATOR`)) return message.reply(base.no).then(w => { setTimeout(() => { w.delete() }, 5000) });
@@ -74,7 +74,7 @@ module.exports = {
                                                     .addField('**__Price:__**', price, true)
                                                     .addField('**__Extra Info__**:', extrainfo, false)
                                                     .setAuthor(`New Listing From ${message.author.tag}`, message.author.displayAvatarURL({ format: `png`, dynamic: true, size: 1024 }))
-                                                    .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                                                    .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                                                     .setTimestamp()
                                                 if (image) embed.setImage(image)
                                                 message.channel.send(embed);

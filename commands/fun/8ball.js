@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: '8ball',
@@ -9,7 +10,7 @@ module.exports = {
         let Embed1 = new MessageEmbed()
             .setDescription(`You did not specify your question!`)
             .setColor(Client.color)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
         let question = args.join(" ");
         if (!question)
             return message.channel.send(Embed1);
@@ -43,7 +44,7 @@ module.exports = {
                 .setTitle(`My Response`)
                 .setDescription(`${response}`)
                 .setColor(Client.color)
-                .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             message.channel.send(Embed);
         }
     },

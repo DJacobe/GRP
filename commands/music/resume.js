@@ -10,7 +10,7 @@ module.exports = {
     execute: async(Client, message, args) => {
         const empty = new MessageEmbed()
             .setDescription(`Servers queue is empty or there is no song paused!`)
-            .setFooter(`${message.guild.name} | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color)
 
         const serverQueue = Client.queue.get(message.guild.id);
@@ -20,7 +20,7 @@ module.exports = {
             serverQueue.connection.dispatcher.resume();
             const resume = new MessageEmbed()
                 .setDescription(`I have resumed the music in this guild!`)
-                .setFooter(`${message.guild.name} | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setColor(Client.color)
             message.channel.send(resume);
         } else

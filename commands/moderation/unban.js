@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const logs = require("../../settings/configuration").LOGGING.Unban_Channel_Logs;
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'unban',
@@ -10,7 +10,7 @@ module.exports = {
     execute: async(Client, message, args) => {
         let channel = message.guild.channels.cache.get(logs)
         let embed = new MessageEmbed({ color: Client.color })
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         if (!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(embed.setDescription('You don\'t have permissions to use this command'))
 

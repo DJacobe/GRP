@@ -9,7 +9,7 @@ module.exports = {
     },
     execute: async(client, message, args) => {
         const embed = new MessageEmbed({ color: client.color })
-            .setFooter(`${message.guild.name} | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(embed.setDescription('You do not have permission to rerol giveaways'));
 

@@ -18,7 +18,7 @@ module.exports = {
 
         const leave = new MessageEmbed()
             .setDescription(`That was a fun party, invite me back soon!`)
-            .setFooter(`${message.guild.name} | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color)
 
         message.channel.send(leave);

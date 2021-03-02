@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'set-status',
@@ -9,11 +9,11 @@ module.exports = {
     execute: async(Client, message, args) => {
         let embed3 = new MessageEmbed()
             .setDescription(`Sorry, you dont have permission to execute this command!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed4 = new MessageEmbed()
             .setDescription(`You failed to provide what I will be setting my status as!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         if (!message.member.hasPermission('ADMINISTRATOR'))
             return message.channel.send(embed3);
@@ -24,7 +24,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setDescription(`I have changed my status!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         message.channel.send(embed);
 

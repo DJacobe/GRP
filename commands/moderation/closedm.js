@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const { MessageEmbed } = require("discord.js");
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'closedm',
@@ -9,7 +9,7 @@ module.exports = {
     },
     execute: async(Client, message, args, base, prefix) => {
         const embed = new MessageEmbed({ color: Client.color })
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         let dmchannel = Client.db.get(`dmchannels.${message.channel.id}`)
         if (!dmchannel) return message.channel.send(embed.setDescription('This isnt a dm channel'))

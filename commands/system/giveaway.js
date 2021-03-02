@@ -12,7 +12,7 @@ module.exports = {
     },
     execute: async(client, message, args, bot) => {
         const embed = new MessageEmbed({ color: client.color })
-            .setFooter(`${message.guild.name} | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         if (message.author.id !== '632289810035507211' && !message.member.hasPermission('MANAGE_MESSAGES'))
             return message.channel.send(embed.setDescription(`You can\`t use that!`));

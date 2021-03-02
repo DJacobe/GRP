@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const { MessageEmbed } = require('discord.js');
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'snipe',
@@ -10,7 +10,7 @@ module.exports = {
     execute: async(Client, message, args) => {
         let embed3 = new MessageEmbed()
             .setDescription(`Theres nothing to snipe :/`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
 
         let snipe = Client.snipes.get(message.channel.id)
@@ -21,7 +21,7 @@ module.exports = {
             .setTimestamp()
             .setTitle(`Sniped Message from ${snipe.author.tag}`)
             .setDescription(`Displaying the last deleted message!\n\nThis user said: \`\`\`${snipe.content}\`\`\``)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         message.channel.send(`I have sniped this users message!`)
         message.channel.send(embed);

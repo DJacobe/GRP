@@ -1,5 +1,6 @@
 const figlet = require('figlet');
 const { MessageEmbed } = require('discord.js');
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'ascii',
@@ -9,11 +10,11 @@ module.exports = {
     execute: async(Client, message, args, base, prefix) => {
         let embed3 = new MessageEmbed()
             .setDescription(`Please provide some text!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed4 = new MessageEmbed()
             .setDescription(`Sorry, please provide text shorter than 2000 characters.`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         if (!args[0]) return message.channel.send(embed3);
 

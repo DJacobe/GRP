@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const { utc } = require('moment')
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
         config: {
             name: 'roleinfo',
@@ -9,7 +9,7 @@ module.exports = {
         },
         execute: async(Client, message, args) => {
                 const embed = new MessageEmbed({ color: Client.color })
-                    .setFooter(`${message.channel.guild.name} | Made By Fuel#2649`, message.channel.guild.iconURL({ dynamic: true }))
+                    .setFooter(`${copyright}`, message.channel.guild.iconURL({ dynamic: true }))
 
                 let role = message.mentions.roles.first()
                 if (!role) return message.channel.send(embed.setDescription('Please mention a role to get its info'))
@@ -22,7 +22,7 @@ module.exports = {
                     .addField("Color", role.hexColor, true)
                     .addField('Hoisted', role.hoist, true)
                     .addField("Members", `${role.members.first(20).map(s => s.toString()).join(' ')} ${role.members.size - 20 > 0 ? `and ${role.members.size - 20} more` : ''}`)
-                .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         message.channel.send(embed2);
     }

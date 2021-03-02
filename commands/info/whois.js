@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const moment = require('moment');
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'whois',
@@ -55,7 +55,7 @@ module.exports = {
             .addField('**Current Status:**', `${status}`, true)
             .addField('**Game:**', `${member.presence.activities[0]}`, true)
             .setColor(Client.color)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setTimestamp();
         message.channel.send(embed);
     },

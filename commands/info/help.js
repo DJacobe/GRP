@@ -1,6 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const Message = require('../../events/Message');
 const { COMMAND_PREFIX } = require('../../settings/configuration').BOT_SETTINGS
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'help',
@@ -33,7 +34,7 @@ module.exports = {
                 }
 
 
-                if (current !== page) emb.edit(embeds[page - 1].setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true })))
+                if (current !== page) emb.edit(embeds[page - 1].setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true })))
             })
         })
 

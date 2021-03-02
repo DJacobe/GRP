@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'dm',
@@ -28,7 +28,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setColor('GREEN')
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setDescription(`\`✅\` Successfully sent a DM message to **${user.username}**`);
 
         message.channel.send(embed);

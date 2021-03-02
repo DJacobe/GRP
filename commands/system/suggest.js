@@ -9,7 +9,7 @@ module.exports = {
     execute: async(Client, message, args) => {
         const embed2 = new MessageEmbed()
             .setDescription(`Please provide valid text for your suggestion!`)
-            .setFooter(`${message.guild.name} | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         suggest = args.join(" ");
 
@@ -19,7 +19,7 @@ module.exports = {
         const embed = new MessageEmbed()
             .setTitle(`New Suggestion from ${message.author.tag}`)
             .addField('Suggestion:', suggest)
-            .setFooter(`${message.guild.name} | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         const msg = await message.channel.send(embed);
 

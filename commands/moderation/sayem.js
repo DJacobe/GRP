@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js')
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'sayem',
@@ -9,12 +9,12 @@ module.exports = {
     execute: async(Client, message, args, config, prefix, base) => {
         let embed3 = new MessageEmbed()
             .setDescription(`I only talk for certain people!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
 
         let embed4 = new MessageEmbed()
             .setDescription(`You failed to provide what I will be saying!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
 
         await message.delete()
@@ -32,7 +32,7 @@ module.exports = {
         let sayem = new MessageEmbed()
             .setDescription(say)
             .setColor(Client.color)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
         message.channel.send(sayem)
     }
 }

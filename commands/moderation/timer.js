@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const parse = require('parse-duration');
 const ms = require('humanize-duration')
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'timer',
@@ -11,7 +11,7 @@ module.exports = {
     execute: async(Client, message, args) => {
         let embed3 = new MessageEmbed()
             .setDescription(`Please provide a valid time!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
 
         if ([null, Infinity].includes(parse(args[0]))) return message.channel.send(embed3);
@@ -22,7 +22,7 @@ module.exports = {
             .setAuthor(`ACTIVE TIMER`)
             .setDescription(`⏰ **Time**: ${ms(end - Date.now(), {round: true})}`)
             .setColor(Client.color)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         const msg = await message.channel.send(embed);
 
@@ -30,7 +30,7 @@ module.exports = {
             const embed2 = new MessageEmbed()
                 .setAuthor(`ACTIVE TIMER`)
                 .setDescription(`⏰ **Time**: ${ms(end - Date.now(), { round: true })}`)
-                .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setColor(Client.color);
 
             if (Date.now() > end) {

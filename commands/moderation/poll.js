@@ -1,5 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const { COMMAND_PREFIX } = require('../../settings/configuration').BOT_SETTINGS;
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'poll',
@@ -20,7 +21,7 @@ module.exports = {
         const embed = new MessageEmbed()
             .setTitle(`This poll was created by ${message.author.username}`)
             .addField(question, `${emoji[0]} ${options[0]}`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
 
         for (let i = 1; i < options.length && i < 10; i++) embed.addField('\u200b', `${emoji[i]} ${options[i]}`)

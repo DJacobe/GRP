@@ -1,6 +1,7 @@
 const { MessageEmbed } = require(`discord.js`)
 const { Kick_On_Warnings, Warnings_Until_Kick } = require('../../settings/configuration.js').BOT_SETTINGS
 const { Kick_Channel_Logs } = require("../../settings/configuration").LOGGING;
+const copyright = require('../../settings/configuration').COPYRIGHT
 
 module.exports = {
     config: {
@@ -10,7 +11,7 @@ module.exports = {
     },
     execute: async(Client, message, args, base) => {
         let embed = new MessageEmbed({ color: Client.color })
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         let channel = message.guild.channels.cache.get(Kick_Channel_Logs)
         let member = message.mentions.members.first() || message.guild.member(args[0])
@@ -27,7 +28,7 @@ module.exports = {
 
         const warn = embed
             .setTitle(`Moderation System | Warning Category`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .addField('User', member.toString(), true)
             .addField('Moderator', message.author.toString(), true)
             .addField('Reason', reason)
@@ -42,7 +43,7 @@ module.exports = {
                 .setTitle("Administration System | Kick Category")
                 .setThumbnail(member.user.displayAvatarURL())
                 .setColor(`GREEN`)
-                .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setDescription(`**Action:** Kick\n**User Kicked:** ${member.user.tag} - (${member.id})\n**Reason:** - Reaching this guilds strike limit!`)
                 .setTimestamp();
 
@@ -50,7 +51,7 @@ module.exports = {
                 .setTitle("Administration System | Kick Category")
                 .setThumbnail(member.user.displayAvatarURL())
                 .setColor(`GREEN`)
-                .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setDescription(`You have been **KICKED** from ${message.guild.name}!\n\n**Staff Member**: ${message.author}\n**Reason:** Reaching this guilds strike limit!`)
                 .setTimestamp();
 

@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const { MessageEmbed } = require("discord.js");
 const logs = require("../../settings/configuration").LOGGING.Ban_Channel_Logs;
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'kick',
@@ -12,31 +12,31 @@ module.exports = {
         let channel = message.guild.channels.cache.get(logs)
         let embed3 = new MessageEmbed()
             .setDescription(`You can\`t use that!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed4 = new MessageEmbed()
             .setDescription(`Sorry, I am missing my required permissions perhaps try moving my role up!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed5 = new MessageEmbed()
             .setDescription(`Sorry, I can't seem to find this user!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed6 = new MessageEmbed()
             .setDescription(`Please specify a user to kick!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed7 = new MessageEmbed()
             .setDescription(`This user can't be kicked! PS: They hold a higher role than you!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed8 = new MessageEmbed()
             .setDescription(`Why are you trying to kick yourself?`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed9 = new MessageEmbed()
             .setDescription(`Sorry! Something went wrong, please try again.`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(embed3)
         if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send(embed4)

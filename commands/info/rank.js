@@ -3,7 +3,7 @@ const db = require('quick.db')
 let levelSettings = require('../../settings/configuration.js').LEVELING_SYSTEM
 const { MessageAttachment } = require('discord.js')
 const Discord = require(`discord.js`)
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'rank',
@@ -16,7 +16,7 @@ module.exports = {
             .setTitle(`Missing Level!`)
             .setDescription(`You need to be at least level 1 to view your rank!`)
             .setColor(client.color)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         if (!levelSettings.Enabled) return message.channel.send(embed1.setDescription('Leveling is disabled on the server'))
         let data = db.get(`${message.guild.id}.${message.author.id}.xp`)

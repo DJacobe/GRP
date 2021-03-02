@@ -1,3 +1,4 @@
+const copyright = require('../../settings/configuration').COPYRIGHT
 const Discord = require('discord.js');
 
 function checkDays(date) {
@@ -23,7 +24,7 @@ module.exports = {
             .addField("Members", message.guild.memberCount, true)
             .addField("Roles", message.guild.roles.cache.size, true)
             .addField("Channels", message.guild.channels.cache.size, true)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         message.channel.send(embed);
     }

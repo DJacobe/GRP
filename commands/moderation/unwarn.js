@@ -1,7 +1,7 @@
 const { MessageEmbed } = require(`discord.js`)
 const db = require(`quick.db`)
 const ord = require('ordinal')
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'unwarn',
@@ -10,7 +10,7 @@ module.exports = {
     },
     execute: async(Client, message, args, base) => {
         let embed = new MessageEmbed()
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         if (!message.member.hasPermission('')) return message.channel.send(embed.setDescription(`Sorry, you are missing permissions to execute this command!`))
         if (!message.mentions.members.first()) return message.channel.send(embed.setDescription(`No Mention? No WARN!`))
@@ -27,7 +27,7 @@ module.exports = {
             .addField('User', mem.toString(), true)
             .addField('Moderator', message.author.toString(), true)
             .addField('Warning History', userWarns.length ? userWarns.map((s, i) => `${i + 1}: ${s.reason}`) : 'None')
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         db.set(`${message.guild.id}.${mem.id}.warnings`, userWarns)
         message.channel.send(warn)

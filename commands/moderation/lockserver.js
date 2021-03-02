@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 let { Enabled } = require('../../settings/configuration').LOCKDOWN_KICK
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'lockserver',
@@ -18,7 +18,7 @@ module.exports = {
                 .setTitle("Administration System | Lockdown Mode")
                 .setThumbnail(message.author.displayAvatarURL())
                 .setColor(`GREEN`)
-                .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setDescription('The server-wide **LOCKDOWN** has ended, members may join now!')
                 .setTimestamp();
 
@@ -29,7 +29,7 @@ module.exports = {
                 .setTitle("Administration System | Lockdown Mode")
                 .setThumbnail(message.author.displayAvatarURL())
                 .setColor(`GREEN`)
-                .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setDescription('The server has been **LOCKED** down, members are restricted from joining!')
                 .setTimestamp();
 

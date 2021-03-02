@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'volume',
@@ -12,12 +13,12 @@ module.exports = {
         const serverQueue = Client.queue.get(message.guild.id);
         const empty = new MessageEmbed()
             .setDescription(`Can\'t seem to find any songs in this guilds queue!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color)
         if (!serverQueue) return message.channel.send(empty);
         const volume = new MessageEmbed({ color: Client.color })
             .setDescription(`Servers volume is currently ${serverQueue.volume}%`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color)
         if (!args[0])
             return message.channel.send(volume);
@@ -28,7 +29,7 @@ module.exports = {
         serverQueue.connection.dispatcher.setVolumeLogarithmic(args[0] / 100);
         const volume1 = new MessageEmbed()
             .setDescription(`I have changed the volume to ${args[0]}%.`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color)
         message.channel.send(volume1);
     }

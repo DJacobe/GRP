@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js')
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'announce',
@@ -9,7 +9,7 @@ module.exports = {
     execute: async(Client, message, args, base, prefix) => {
         let embed3 = new MessageEmbed({ color: Client.color })
             .setDescription(`What would you like the description to be?`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         if (!message.member.hasPermission("ADMINISTRATOR")) return (await message.channel.send(embed.setDescription('**You dont have permission!**'))).delete({ timeout: 5000 })
 
@@ -30,7 +30,7 @@ module.exports = {
                         .setAuthor(`Notification From ${message.author.username}`, message.author.displayAvatarURL({ format: `png`, dynamic: true, size: 1024 }))
                         .setDescription(desc)
                         .setColor(Client.color)
-                        .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                        .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                         .setTimestamp()
                     message.channel.send(embed)
                     message.channel.bulkDelete(3)

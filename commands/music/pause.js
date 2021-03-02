@@ -17,12 +17,12 @@ module.exports = {
 
             const pause = new MessageEmbed()
                 .setDescription(`I have paused the music in this guild!`)
-                .setFooter(`SKRRT! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setColor(Client.color)
             message.channel.send(pause);
             const empty = new MessageEmbed()
                 .setDescription(`Can\'t seem to find any songs in this guilds queue!`)
-                .setFooter(`NOPE! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setColor(Client.color)
         } else return message.channel.send(empty);
     }

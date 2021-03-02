@@ -1,3 +1,4 @@
+const copyright = require('../../settings/configuration').COPYRIGHT
 const Discord = require("discord.js");
 module.exports = {
     config: {
@@ -10,7 +11,7 @@ module.exports = {
             const _ = new Discord.MessageEmbed()
                 .setTitle("Pong!")
                 .setColor(client.color)
-                .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setDescription(
                     `Message round-trip took  ${Math.floor(
             ping.createdTimestamp - message.createdTimestamp

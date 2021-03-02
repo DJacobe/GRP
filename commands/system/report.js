@@ -13,7 +13,7 @@ module.exports = {
             report = args.slice(1).join(' ')
 
         const embed = new MessageEmbed({ color: Client.color })
-            .setFooter(`${message.guild.name} | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
 
         if (!message.mentions.users.first()) return message.channel.send(embed.setDescription('Please mention the user you are trying to report'));
         if (!args[1]) return message.channel.send(embed.setDescription(`Please provide valid text for your report!`))

@@ -1,19 +1,19 @@
 const { MessageEmbed } = require('discord.js');
 const ms = require('parse-duration');
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     execute: async(Client, message, args) => {
         let embed3 = new MessageEmbed()
             .setDescription(`Please provide a valid time duration!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed4 = new MessageEmbed()
             .setDescription(`Please provide a valid member by mention or ID!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         let embed5 = new MessageEmbed()
             .setDescription(`You can\'t mute yourself!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         if (!message.member.hasPermission('MUTE_MEMBERS'))
             return message.channel.send(`\`❌\` You don't have permissions`);
@@ -42,7 +42,7 @@ module.exports = {
             .setDescription(
                 `\`✅\` **${member.displayName}** has been muted for **${time}**\nReason: **${reason}**.`
             )
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         message.channel.send(successLog);
 

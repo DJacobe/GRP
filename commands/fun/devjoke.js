@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'devjoke',
@@ -32,7 +33,7 @@ module.exports = {
             .setImage(`https://cdn.discordapp.com/attachments/735248366291648523/742124449545060382/dddddddddddddddddddddddddd.gif`)
             .setDescription(responses[~~(Math.random() * responses.length)])
             .setColor(Client.color)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
         message.channel.send(Embed);
     }
 }

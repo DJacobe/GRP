@@ -1,4 +1,5 @@
 const { MessageEmbed } = require('discord.js')
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
     config: {
         name: 'clear',
@@ -8,15 +9,15 @@ module.exports = {
     execute: async(client, message, args) => {
         let embed3 = new MessageEmbed()
             .setDescription(`Please provide the ammount of messages that you would like to delete!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(client.color);
         let embed4 = new MessageEmbed()
             .setDescription(`You cannot clear more than 100 messages at once!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(client.color);
         let embed5 = new MessageEmbed()
             .setDescription(`You need to delete at least one message!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(client.color);
 
         const amount = args.join(" ");
@@ -32,7 +33,7 @@ module.exports = {
                 .setTitle(`Cleaning System`)
                 .setDescription(`**${messages.size}** messages were deleted by **${message.author.tag}**`)
                 .setColor("BLUE")
-                .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setTimestamp()
             message.channel.send(embed)
         }).catch(() => {

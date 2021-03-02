@@ -13,7 +13,7 @@ module.exports = {
 
         const empty = new MessageEmbed()
             .setDescription(`Can\'t seem to find any songs in this guilds queue!`)
-            .setFooter(`It wasnt me. | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color)
 
         if (!serverQueue) return message.channel.send(empty);
@@ -28,7 +28,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setDescription(`Current Song: ${serverQueue.songs[0].title}\nDuration: ${minutes} minutes & ${seconds} seconds!`)
-            .setFooter(`Party! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         message.channel.send(embed);
     }

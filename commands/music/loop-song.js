@@ -11,7 +11,7 @@ module.exports = {
 
         const empty = new MessageEmbed()
             .setDescription(`Can\'t seem to find any songs in this guilds queue!`)
-            .setFooter(`Try Again! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color)
 
 
@@ -23,13 +23,13 @@ module.exports = {
             serverQueue.loopSong = true;
             const loop1 = new MessageEmbed()
                 .setDescription(`Looping has been enabled by ${message.author}!`)
-                .setFooter(`I dont feel to good.. | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setColor(Client.color)
             message.channel.send(loop1);
         } else {
             const loop2 = new MessageEmbed()
                 .setDescription(`Looping has been disabled by ${message.author}!`)
-                .setFooter(`I feel good now! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setColor(Client.color)
             serverQueue.loopSong = false;
             message.channel.send(loop2);
