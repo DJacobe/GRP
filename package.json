@@ -1,0 +1,43 @@
+{
+    "name": "fuelbot",
+    "version": "1.0.0",
+    "description": "A discord bot made using nodejs",
+    "main": "index.js",
+    "dependencies": {
+        "better-sqlite3": "^7.1.0",
+        "canvacord": "^3.0.9",
+        "canvas": "^2.6.1",
+        "discord-jokes": "^1.0.12",
+        "discord.js": "^12.2.0",
+        "enmap": "^5.6.1",
+        "ffmpeg-static": "^4.2.7",
+        "figlet": "^1.5.0",
+        "humanize-duration": "^3.23.1",
+        "jsdom": "^16.4.0",
+        "log-symbols": "^4.0.0",
+        "moment": "^2.27.0",
+        "ms": "^2.1.2",
+        "node-opus": "^0.3.3",
+        "ordinal": "^1.0.3",
+        "parse-duration": "^0.4.4",
+        "parse-ms": "^2.1.0",
+        "quick.db": "^7.1.1",
+        "random-puppy": "^1.1.0",
+        "simple-youtube-api": "^5.2.1",
+        "ytdl-core": "^3.2.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/brandonst/FuelBot.git"
+    },
+    "author": "Fuel & Brandon",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/brandonst/FuelBot/issues"
+    },
+    "homepage": "https://github.com/brandonst/FuelBot#readme"
+}
