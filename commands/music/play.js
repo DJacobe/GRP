@@ -1,6 +1,7 @@
 const { MessageEmbed, Util } = require("discord.js");
 const YoutubeAPI = require("simple-youtube-api");
 const API_Key = require("../../settings/configuration").BOT_SETTINGS.YT_API_KEY;
+const copyright = require('../../settings/configuration').COPYRIGHT
 const youtube = new YoutubeAPI(API_Key)
 
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
         let url = args[1] ? args[1].replace(/<(.+)>/g, "$1") : "";
         const embed33 = new MessageEmbed()
             .setDescription(`Please provide me a title or link!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`I aint got all day! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color)
         if (!search)
             return message.channel.send(embed33);
@@ -23,7 +24,7 @@ module.exports = {
 
         const embed32 = new MessageEmbed()
             .setDescription(`Please join a voice channel before trying to use me!`)
-            .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`I aint got all day! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color)
 
         if (!voiceChannel)
@@ -43,7 +44,7 @@ module.exports = {
 
             const embed = new MessageEmbed()
                 .setDescription(`Successfully added ${playlist.title} to the guilds queue!`)
-                .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                .setFooter(`I aint got all day! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
                 .setColor(Client.color)
             message.channel.send(embed);
         } else {
@@ -54,7 +55,7 @@ module.exports = {
 
                     const playing = new MessageEmbed()
                         .setDescription(`Searching for - \`${search}\``)
-                        .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                        .setFooter(`I aint got all day! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
                         .setColor(Client.color)
                     message.channel.send(playing);
                     var videos = await youtube.searchVideos(search, 1).catch(() => {})
@@ -63,7 +64,7 @@ module.exports = {
 
                     const result = new MessageEmbed()
                         .setDescription(`Sorry, I can\'t seem to find that song!`)
-                        .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                        .setFooter(`I aint got all day! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
                         .setColor(Client.color)
                     message.channel.send(result);
                 }

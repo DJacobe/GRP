@@ -28,7 +28,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setDescription(`Current Song: ${serverQueue.songs[0].title}\nDuration: ${minutes} minutes & ${seconds} seconds!`)
-            .setFooter(`${message.guild.name} | ${copyright}`, message.guild.iconURL({ dynamic: true }))
+            .setFooter(`Party! | ${copyright}`, message.guild.iconURL({ dynamic: true }))
             .setColor(Client.color);
         message.channel.send(embed);
     }

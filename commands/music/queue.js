@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-
+const copyright = require('../../settings/configuration').COPYRIGHT
 module.exports = {
         config: {
             name: 'queue',
@@ -10,7 +10,7 @@ module.exports = {
                 const serverQueue = Client.queue.get(message.guild.id);
                 const empty = new MessageEmbed()
                     .setDescription(`Can\'t seem to find any songs in this guilds queue!`)
-                    .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+                    .setFooter(`Do I? | ${copyright}`, message.guild.iconURL({ dynamic: true }))
                     .setColor(Client.color)
                 if (!serverQueue) return message.channel.send(empty);
 
@@ -29,7 +29,7 @@ ${serverQueue.songs
     .setThumbnail(
       `https://img.youtube.com/vi/${serverQueue.songs[0].id}/maxresdefault.jpg`
     )
-    .setFooter(`${message.guild.name} | Made By Fuel#2649`, message.guild.iconURL({ dynamic: true }))
+    .setFooter(`Do I? | ${copyright}`, message.guild.iconURL({ dynamic: true }))
     .setColor(Client.color);
   message.channel.send(embed);
 }}
